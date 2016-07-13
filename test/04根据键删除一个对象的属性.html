@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04根据键删除一个对象的属性</title>
+    <script>
+        var a = {};
+        a.aa = 13;
+        console.log(a);
+
+        //        a.aa = null;      //键还是存在
+        //        a.aa=undefined;     //键还是存在
+        //        a['aa'] = undefined;//键还是存在
+        //        delete a['aa']; //成功删除
+        delete a.aa;    //成功删除
+        //根据“键字符串值”来删除对象的某个属性
+        //        a.removeProperty('aa');
+        console.log(a);
+    </script>
+</head>
+<body>
+一般获取一个元素a
+然后a.style.removeProperty()的方式来使用！
+
+符合w3c的（gecko,opera,webkit）的使用removeProperty
+IE的使用removeAttribute
+</body>
+</html>

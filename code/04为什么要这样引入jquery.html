@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04为什么要这样引入jquery</title>
+    <script src="../vendor/require.js" data-main="../scripts/04为什么要这样引入jquery.js"></script>
+    <script>
+        console.log('data-main指向的js是异步加载的？');
+        console.log('是的，是异步加载。')
+    </script>
+</head>
+<body>
+<div id="zcDiv">
+    即使按照AMD的方式引入jquery，但是，$和jQuery还是不可避免的成为全局变量！
+    那么为什么还要这样引入jQuery呢？
+</div>
+</body>
+</html>

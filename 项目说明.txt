@@ -1,0 +1,3 @@
+这个项目是为了研究JavaScript的组件化技术
+尤其以require.js这个库为例
+

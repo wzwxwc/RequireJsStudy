@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02同时有2个class谁先起作用</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="red blue">
+    同时时候冲突的2个class
+    和class的位置没有关系，而是和class加载的先后顺序有关！
+    谁最后加载，谁就起作用！
+</div>
+</body>
+</html>

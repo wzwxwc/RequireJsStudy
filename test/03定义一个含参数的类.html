@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03定义一个含参数的类</title>
+    <script>
+        //纯js定义的一个可以传参数的“类”
+        function ZCclass(options) {
+            this.a = options.a;
+            this.b = options.b;
+            this.show = function () {
+                console.log(this.a);
+                console.log(this.b);
+            }
+        }
+
+        var zc = new ZCclass({a: 3, b: 4});
+        zc.show();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
