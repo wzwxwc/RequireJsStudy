@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03不用this是否可以new</title>
+    <script>
+        function Cat(name, age) {
+            return {
+                name: name,
+                age: age
+            }
+        }
+        var cat = new Cat("tomcat", 12);
+
+        //下述是构造函数的模式！dog的
+        function Dog(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var dog = new Dog("jim", 13);
+
+        console.log("debug");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

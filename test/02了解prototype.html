@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02了解prototype</title>
+    <script>
+        function Cat(name, age) {
+            this.name = name || "未知名称";
+            this.age = age || 0;
+            //下述这种添加原型的方式是错误的，因为this指的是当前类的实例
+            //this.prototype.type = "猫科动物";
+        }
+        Cat.prototype.type = "猫科动物";
+        Cat.prototype.eat = function () {
+            console.log(this.name + " is eating");
+        };
+
+        function Dog(name, age) {
+            this.name = name;
+            this.age = age;
+            this.type = "犬类动物";
+            this.eat = function () {
+                console.log(this.name + " is eating.");
+            }
+        }
+
+        //请记住用var吧！
+        //Cat cat=new Cat("tomcat",1);
+        var cat = new Cat("tomcat", 1);
+        var cat2 = new Cat("lilycat", 2);
+
+        var dog = new Dog("tomdog", "2");
+        var dog2 = new Dog("jimdog", 1);
+
+        console.log("suspend");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01原生js实现类</title>
+    <script>
+        function FnTest() {
+            //下述p1并不能作为FnTest这个类的实例的属性！！
+            var p1=0;
+        }
+
+        var a=new FnTest();
+        console.log(a);
+        console.log(a.p1);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
