@@ -5,15 +5,17 @@
     <title>06new不出对象</title>
     <script src="../vendor/require.js"></script>
     <script>
-        //        require(["../module/ReturnNull"], function (returnnull) {
-        //            console.log("returnnull参数的值是：" + returnnull);
-        //        });
+        require(["../module/ReturnNull"], function (returnnull) {
+            console.log("returnnull参数的值是：" + returnnull);
+            //这个时候，如果把它当做一个类来new，就会出现异常
+            var a = new returnnull();
+        });
 
         //其实如果它是undefined，直接不写对应的参数就可以了
         //下述语句也成功执行了！
-        require(["../module/ReturnNull"], function () {
-            console.log("不带参数的加载")
-        })
+        //        require(["../module/ReturnNull"], function () {
+        //            console.log("不带参数的加载")
+        //        })
     </script>
 </head>
 <body>
