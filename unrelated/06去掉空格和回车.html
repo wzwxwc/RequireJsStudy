@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01去掉空格和回车</title>
+    <script>
+        function fnClearSpaceAndReturn() {
+            var original = document.getElementById("original");
+            var valueOriginal = original.value;
+
+            var valueResult = valueOriginal;
+//            valueResult = valueResult.replace(/\ +/g, "");    //去掉空格——方法1
+            valueResult = valueResult.replace(/[ ]/g, "");    //去掉空格——方法2
+            valueResult = valueResult.replace(/[\r\n]/g, "");      //去掉回车、换行
+
+            var result = document.getElementById("result");
+            result.value = valueResult;
+        }
+    </script>
+</head>
+<body>
+<textarea name="" id="original" cols="250" rows="18">
+    hj   khjk
+
+hkjhjk
+
+<会很>        </会很>快就会 很快
+
+
+
+
+    就会尽快     hjhjkhk
+
+jhjkhjk
+</textarea>
+
+<br/>
+<input type="button" value="去掉空格和回车" onclick="fnClearSpaceAndReturn()">
+<br/>
+
+<textarea name="" id="result" cols="250" rows="10"></textarea>
+</body>
+</html>
+
+<!--
+参考网址：
+http://www.jb51.net/article/42755.htm
+更多参考
+http://www.haorooms.com/post/js_kong_ge
+
+需要学习一下js中的正则
+
+-->
