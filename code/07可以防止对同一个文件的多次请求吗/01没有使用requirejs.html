@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01没有使用requirejs</title>
+    <script>
+        console.log("第1次引入js资源")
+    </script>
+    <script src="测试资源.js"></script>
+    <script>
+        console.log("第2次引入js资源")
+    </script>
+    <script src="测试资源.js"></script>
+</head>
+<body>
+<script>
+    console.log("第3次引入js资源")
+</script>
+<script src="测试资源.js"></script>
+<pre>
+我想看看，如果不使用requirejs
+在一个文件多次引用同一个js文件，是否会导致多次请求和多次加载？
+回答：很显然，每次引入js，都会导致执行！但是，关键要看是不是每次都会导致一次“网络请求”？
+</pre>
+<table border="1">
+    <tr>
+        <th>浏览器</th>
+        <th>js文件网络请求次数</th>
+    </tr>
+    <tr>
+        <td>chrome</td>
+        <td>1次</td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    console.log("第4次引入js资源")
+</script>
+<script src="测试资源.js"></script>
