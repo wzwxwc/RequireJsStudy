@@ -4,7 +4,7 @@
 require.config({
     baseUrl: '',
     paths: {
-        jquery: '../vendor/jquery-3.0.0'
+        jquery: '../deps/jquery-3.0.0'
     }
 });
 
