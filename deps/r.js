@@ -462,7 +462,7 @@ var requirejs, require, define, xpcUtil;
             },
             registry = {},
             //registry of just enabled modules, to speed
-            //cycle breaking code when lots of modules
+            //cycle breaking codes when lots of modules
             //are registered, but not activated.
             enabledRegistry = {},
             undefEvents = {},
@@ -1278,7 +1278,7 @@ var requirejs, require, define, xpcUtil;
                         onError(err);
                     });
 
-                    //Allow plugins to load other code without having to know the
+                    //Allow plugins to load other codes without having to know the
                     //context or how to 'complete' the load.
                     load.fromText = bind(this, function (text, textAlt) {
                         /*jslint evil: true */
@@ -1795,7 +1795,7 @@ var requirejs, require, define, xpcUtil;
              * Called to enable a module if it is still in the registry
              * awaiting enablement. A second arg, parent, the parent module,
              * is passed in for context, when this method is overridden by
-             * the optimizer. Not shown here to keep code compact.
+             * the optimizer. Not shown here to keep codes compact.
              */
             enable: function (depMap) {
                 var mod = getOwn(registry, depMap.id);
@@ -2159,11 +2159,11 @@ var requirejs, require, define, xpcUtil;
                     //Check if node.attachEvent is artificially added by custom script or
                     //natively supported by browser
                     //read https://github.com/requirejs/requirejs/issues/187
-                    //if we can NOT find [native code] then it must NOT natively supported.
+                    //if we can NOT find [native codes] then it must NOT natively supported.
                     //in IE8, node.attachEvent does not have toString()
-                    //Note the test for "[native code" with no closing brace, see:
+                    //Note the test for "[native codes" with no closing brace, see:
                     //https://github.com/requirejs/requirejs/issues/273
-                    !(node.attachEvent.toString && node.attachEvent.toString().indexOf('[native code') < 0) &&
+                    !(node.attachEvent.toString && node.attachEvent.toString().indexOf('[native codes') < 0) &&
                     !isOpera) {
                 //Probably IE. IE (at least 6-8) do not fire
                 //script onload right after executing the script, so
@@ -2445,7 +2445,7 @@ var requirejs, require, define, xpcUtil;
         require.nodeRequire = nodeRequire;
 
         //Explicity not strict since this file contains an eval call, and do not want
-//to enforce strict on code evaluated that way. See
+//to enforce strict on codes evaluated that way. See
 //https://github.com/requirejs/r.js/issues/774
 /*jslint regexp: false, sloppy: true*/
 /*global require: false, define: false, requirejsVars: false, process: false */
@@ -2539,7 +2539,7 @@ var requirejs, require, define, xpcUtil;
         process.nextTick(fn);
     };
 
-    //Add wrapper around the code so that it gets the requirejs
+    //Add wrapper around the codes so that it gets the requirejs
     //API instead of the Node API, and it is done lexically so
     //that it survives later execution.
     req.makeNodeWrapper = function (contents) {
@@ -2921,7 +2921,7 @@ define('lang', function () {
 
 //Set prime.hideResolutionConflict = true to allow "resolution-races"
 //in promise-tests to pass.
-//Since the goal of prim is to be a small impl for trusted code, it is
+//Since the goal of prim is to be a small impl for trusted codes, it is
 //more important to normally throw in this case so that we can find
 //logic errors quicker.
 
@@ -4461,7 +4461,7 @@ define('logger', ['env!env/print'], function (print) {
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright
+    * Redistributions of source codes must retain the above copyright
       notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in the
@@ -4654,7 +4654,7 @@ define('logger', ['env!env/print'], function (print) {
         IllegalContinue: 'Illegal continue statement',
         IllegalBreak: 'Illegal break statement',
         IllegalReturn: 'Illegal return statement',
-        StrictModeWith: 'Strict mode code may not include a with statement',
+        StrictModeWith: 'Strict mode codes may not include a with statement',
         StrictCatchVariable: 'Catch variable may not be eval or arguments in strict mode',
         StrictVarName: 'Variable name may not be eval or arguments in strict mode',
         StrictParamName: 'Parameter name eval or arguments is not allowed in strict mode',
@@ -5747,7 +5747,7 @@ define('logger', ['env!env/print'], function (print) {
         if (flags.indexOf('u') >= 0) {
             tmp = tmp
                 // Replace every Unicode escape sequence with the equivalent
-                // BMP character or a constant ASCII code point in the case of
+                // BMP character or a constant ASCII codes point in the case of
                 // astral symbols. (See the above note on `astralSubstitute`
                 // for more information.)
                 .replace(/\\u\{([0-9a-fA-F]+)\}|\\u([a-fA-F0-9]{4})/g, function ($0, $1, $2) {
@@ -6983,7 +6983,7 @@ define('logger', ['env!env/print'], function (print) {
     /**
      * @name expectCommaSeparator
      * @description Quietly expect a comma when in tolerant mode, otherwise delegates
-     * to <code>expect(value)</code>
+     * to <codes>expect(value)</codes>
      * @since 2.0
      */
     function expectCommaSeparator() {
@@ -10696,7 +10696,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * modification, are permitted provided that the following conditions are
 	 * met:
 	 *
-	 *  * Redistributions of source code must retain the above copyright
+	 *  * Redistributions of source codes must retain the above copyright
 	 *    notice, this list of conditions and the following disclaimer.
 	 *  * Redistributions in binary form must reproduce the above
 	 *    copyright notice, this list of conditions and the following
@@ -10849,7 +10849,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  /**
-	   * Decode a single base 64 character code digit to an integer. Returns -1 on
+	   * Decode a single base 64 character codes digit to an integer. Returns -1 on
 	   * failure.
 	   */
 	  exports.decode = function (charCode) {
@@ -10978,7 +10978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * - Removes unnecessary '.' parts.
 	   * - Removes unnecessary '<dir>/..' parts.
 	   *
-	   * Based on code in the Node.js 'path' core module.
+	   * Based on codes in the Node.js 'path' core module.
 	   *
 	   * @param aPath The path or url to normalize.
 	   */
@@ -11518,16 +11518,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // Each object in the arrays is of the form:
 	  //
 	  //     {
-	  //       generatedLine: The line number in the generated code,
-	  //       generatedColumn: The column number in the generated code,
+	  //       generatedLine: The line number in the generated codes,
+	  //       generatedColumn: The column number in the generated codes,
 	  //       source: The path to the original source file that generated this
-	  //               chunk of code,
+	  //               chunk of codes,
 	  //       originalLine: The line number in the original source that
-	  //                     corresponds to this chunk of generated code,
+	  //                     corresponds to this chunk of generated codes,
 	  //       originalColumn: The column number in the original source that
-	  //                       corresponds to this chunk of generated code,
+	  //                       corresponds to this chunk of generated codes,
 	  //       name: The name of the original symbol which generated this chunk of
-	  //             code.
+	  //             codes.
 	  //     }
 	  //
 	  // All properties except for `generatedLine` and `generatedColumn` can be
@@ -12692,7 +12692,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // faster than JS when doing raw CPU-intensive sorting. However, when using a
 	  // custom comparator function, calling back and forth between the VM's C++ and
 	  // JIT'd JS is rather slow *and* loses JIT type information, resulting in
-	  // worse generated code for the comparator function than would be optimal. In
+	  // worse generated codes for the comparator function than would be optimal. In
 	  // fact, when sorting with a comparator, these costs outweigh the benefits of
 	  // sorting in C++. By using our own JS-implemented Quick Sort (below), we get
 	  // a ~3500ms mean speed-up in `bench/bench.html`.
@@ -12815,7 +12815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // operating systems these days (capturing the result).
 	  var REGEX_NEWLINE = /(\r?\n)/;
 
-	  // Newline character code for charCodeAt() comparisons
+	  // Newline character codes for charCodeAt() comparisons
 	  var NEWLINE_CODE = 10;
 
 	  // Private symbol for identifying `SourceNode`s when multiple versions of
@@ -12825,8 +12825,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  /**
 	   * SourceNodes provide a way to abstract over interpolating/concatenating
-	   * snippets of generated JavaScript source code while maintaining the line and
-	   * column information associated with the original source code.
+	   * snippets of generated JavaScript source codes while maintaining the line and
+	   * column information associated with the original source codes.
 	   *
 	   * @param aLine The original line number.
 	   * @param aColumn The original column number.
@@ -12847,20 +12847,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  /**
-	   * Creates a SourceNode from generated code and a SourceMapConsumer.
+	   * Creates a SourceNode from generated codes and a SourceMapConsumer.
 	   *
-	   * @param aGeneratedCode The generated code
-	   * @param aSourceMapConsumer The SourceMap for the generated code
+	   * @param aGeneratedCode The generated codes
+	   * @param aSourceMapConsumer The SourceMap for the generated codes
 	   * @param aRelativePath Optional. The path that relative sources in the
 	   *        SourceMapConsumer should be relative to.
 	   */
 	  SourceNode.fromStringWithSourceMap =
 	    function SourceNode_fromStringWithSourceMap(aGeneratedCode, aSourceMapConsumer, aRelativePath) {
-	      // The SourceNode we want to fill with the generated code
+	      // The SourceNode we want to fill with the generated codes
 	      // and the SourceMap
 	      var node = new SourceNode();
 
-	      // All even indices of this array are one line of the generated code,
+	      // All even indices of this array are one line of the generated codes,
 	      // while all odd indices are the newlines between two adjacent lines
 	      // (since `REGEX_NEWLINE` captures its match).
 	      // Processed fragments are removed from this array, by calling `shiftNextLine`.
@@ -12875,24 +12875,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // We need to remember the position of "remainingLines"
 	      var lastGeneratedLine = 1, lastGeneratedColumn = 0;
 
-	      // The generate SourceNodes we need a code range.
+	      // The generate SourceNodes we need a codes range.
 	      // To extract it current and last mapping is used.
 	      // Here we store the last mapping.
 	      var lastMapping = null;
 
 	      aSourceMapConsumer.eachMapping(function (mapping) {
 	        if (lastMapping !== null) {
-	          // We add the code from "lastMapping" to "mapping":
+	          // We add the codes from "lastMapping" to "mapping":
 	          // First check if there is a new line in between.
 	          if (lastGeneratedLine < mapping.generatedLine) {
 	            // Associate first line with "lastMapping"
 	            addMappingWithCode(lastMapping, shiftNextLine());
 	            lastGeneratedLine++;
 	            lastGeneratedColumn = 0;
-	            // The remaining code is added without mapping
+	            // The remaining codes is added without mapping
 	          } else {
 	            // There is no new line in between.
-	            // Associate the code between "lastGeneratedColumn" and
+	            // Associate the codes between "lastGeneratedColumn" and
 	            // "mapping.generatedColumn" with "lastMapping"
 	            var nextLine = remainingLines[0];
 	            var code = nextLine.substr(0, mapping.generatedColumn -
@@ -12901,12 +12901,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                lastGeneratedColumn);
 	            lastGeneratedColumn = mapping.generatedColumn;
 	            addMappingWithCode(lastMapping, code);
-	            // No more remaining code, continue
+	            // No more remaining codes, continue
 	            lastMapping = mapping;
 	            return;
 	          }
 	        }
-	        // We add the generated code until the first mapping
+	        // We add the generated codes until the first mapping
 	        // to the SourceNode without any mapping.
 	        // Each line is added as separate string.
 	        while (lastGeneratedLine < mapping.generatedLine) {
@@ -12924,7 +12924,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // We have processed all mappings.
 	      if (remainingLines.length > 0) {
 	        if (lastMapping) {
-	          // Associate the remaining code in the current line with "lastMapping"
+	          // Associate the remaining codes in the current line with "lastMapping"
 	          addMappingWithCode(lastMapping, shiftNextLine());
 	        }
 	        // and add the remaining lines without any mapping
@@ -12963,7 +12963,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  /**
 	   * Add a chunk of generated JS to this source node.
 	   *
-	   * @param aChunk A string snippet of generated JS code, another instance of
+	   * @param aChunk A string snippet of generated JS codes, another instance of
 	   *        SourceNode, or an array where each member is one of those things.
 	   */
 	  SourceNode.prototype.add = function SourceNode_add(aChunk) {
@@ -12988,7 +12988,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  /**
 	   * Add a chunk of generated JS to the beginning of this source node.
 	   *
-	   * @param aChunk A string snippet of generated JS code, another instance of
+	   * @param aChunk A string snippet of generated JS codes, another instance of
 	   *        SourceNode, or an array where each member is one of those things.
 	   */
 	  SourceNode.prototype.prepend = function SourceNode_prepend(aChunk) {
@@ -13237,7 +13237,7 @@ define('uglifyjs', ['exports', 'source-map', 'logger', 'env!env/file'], function
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -13548,7 +13548,7 @@ Dictionary.fromObject = function(obj) {
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -13764,7 +13764,7 @@ var AST_While = DEFNODE("While", null, {
 var AST_For = DEFNODE("For", "init condition step", {
     $documentation: "A `for` statement",
     $propdoc: {
-        init: "[AST_Node?] the `for` initialization code, or null if empty",
+        init: "[AST_Node?] the `for` initialization codes, or null if empty",
         condition: "[AST_Node?] the `for` termination clause, or null if empty",
         step: "[AST_Node?] the `for` update clause, or null if empty"
     },
@@ -13781,7 +13781,7 @@ var AST_For = DEFNODE("For", "init condition step", {
 var AST_ForIn = DEFNODE("ForIn", "init name object", {
     $documentation: "A `for ... in` statement",
     $propdoc: {
-        init: "[AST_Node] the `for/in` initialization code",
+        init: "[AST_Node] the `for/in` initialization codes",
         name: "[AST_SymbolRef?] the loop variable, only if `init` is AST_Var",
         object: "[AST_Node] the object that we're looping through"
     },
@@ -14564,7 +14564,7 @@ TreeWalker.prototype = {
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -16065,7 +16065,7 @@ function parse($TEXT, options) {
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -16284,7 +16284,7 @@ TreeTransformer.prototype = new TreeWalker;
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -16634,7 +16634,7 @@ AST_Toplevel.DEFMETHOD("_default_mangler_options", function(options){
 AST_Toplevel.DEFMETHOD("mangle_names", function(options){
     options = this._default_mangler_options(options);
     // We only need to mangle declaration nodes.  Special logic wired
-    // into the code generator will display the mangled name if it's
+    // into the codes generator will display the mangled name if it's
     // present (and for AST_SymbolRef-s it'll use the mangled name of
     // the AST_SymbolDeclaration that it points to).
     var lname = -1;
@@ -16902,7 +16902,7 @@ AST_Toplevel.DEFMETHOD("scope_warnings", function(options){
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -17257,7 +17257,7 @@ function OutputStream(options) {
 
 };
 
-/* -----[ code generators ]----- */
+/* -----[ codes generators ]----- */
 
 (function(){
 
@@ -17390,7 +17390,7 @@ function OutputStream(options) {
     });
 
     // same goes for an object literal, because otherwise it would be
-    // interpreted as a block of code.
+    // interpreted as a block of codes.
     PARENS(AST_Object, function(output){
         return first_in_statement(output);
     });
@@ -17710,7 +17710,7 @@ function OutputStream(options) {
         if (self.body instanceof AST_Do
             && !output.option("screw_ie8")) {
             // https://github.com/mishoo/UglifyJS/issues/#issue/57 IE
-            // croaks with "syntax error" on code like this: if (foo)
+            // croaks with "syntax error" on codes like this: if (foo)
             // do ... while(cond); else ...  we need block brackets
             // around do/while
             make_block(self.body, output);
@@ -18274,7 +18274,7 @@ function OutputStream(options) {
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -18589,7 +18589,7 @@ merge(Compressor.prototype, {
                   case (in_lambda && stat instanceof AST_Return && !stat.value && ret.length == 0):
                     CHANGED = true;
                     // note, ret.length is probably always zero
-                    // because we drop unreachable code before this
+                    // because we drop unreachable codes before this
                     // step.  nevertheless, it's good to check.
                     continue loop;
                   case stat instanceof AST_If:
@@ -18644,7 +18644,7 @@ merge(Compressor.prototype, {
                         // XXX: what was the intention of this case?
                         // if sequences is not enabled, this can lead to an endless loop (issue #866).
                         // however, with sequences on this helps producing slightly better output for
-                        // the example code.
+                        // the example codes.
                         if (compressor.option("sequences")
                             && ret.length == 1 && in_lambda && ret[0] instanceof AST_SimpleStatement
                             && (!stat.alternative || stat.alternative instanceof AST_SimpleStatement)) {
@@ -18880,10 +18880,10 @@ merge(Compressor.prototype, {
     };
 
     function extract_declarations_from_unreachable_code(compressor, stat, target) {
-        compressor.warn("Dropping unreachable code [{file}:{line},{col}]", stat.start);
+        compressor.warn("Dropping unreachable codes [{file}:{line},{col}]", stat.start);
         stat.walk(new TreeWalker(function(node){
             if (node instanceof AST_Definitions) {
-                compressor.warn("Declarations in unreachable code! [{file}:{line},{col}]", node.start);
+                compressor.warn("Declarations in unreachable codes! [{file}:{line},{col}]", node.start);
                 node.remove_initializers();
                 target.push(node);
                 return true;
@@ -19331,7 +19331,7 @@ merge(Compressor.prototype, {
             });
             self.walk(tw);
             // pass 2: for every used symbol we need to walk its
-            // initialization code to figure out if it uses other
+            // initialization codes to figure out if it uses other
             // symbols (that may not be in_use).
             for (var i = 0; i < in_use.length; ++i) {
                 in_use[i].orig.forEach(function(decl){
@@ -19403,7 +19403,7 @@ merge(Compressor.prototype, {
                             return 0;
                         });
                         // for unused names whose initialization has
-                        // side effects, we can cascade the init. code
+                        // side effects, we can cascade the init. codes
                         // into the next one, or next statement.
                         var side_effects = [];
                         for (var i = 0; i < def.length;) {
@@ -20027,7 +20027,7 @@ merge(Compressor.prototype, {
                     if (all(self.args, function(x){ return x instanceof AST_String })) {
                         // quite a corner-case, but we can handle it:
                         //   https://github.com/mishoo/UglifyJS2/issues/203
-                        // if the code argument is a constant, then we can minify it.
+                        // if the codes argument is a constant, then we can minify it.
                         try {
                             var code = "(function(" + self.args.slice(0, -1).map(function(arg){
                                 return arg.value;
@@ -20065,7 +20065,7 @@ merge(Compressor.prototype, {
                             return self;
                         } catch(ex) {
                             if (ex instanceof JS_Parse_Error) {
-                                compressor.warn("Error parsing code passed to new Function [{file}:{line},{col}]", self.args[self.args.length - 1].start);
+                                compressor.warn("Error parsing codes passed to new Function [{file}:{line},{col}]", self.args[self.args.length - 1].start);
                                 compressor.warn(ex.toString());
                             } else {
                                 console.log(ex);
@@ -20809,7 +20809,7 @@ merge(Compressor.prototype, {
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -20902,7 +20902,7 @@ function SourceMap(options) {
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -21440,7 +21440,7 @@ function SourceMap(options) {
     modification, are permitted provided that the following conditions
     are met:
 
-        * Redistributions of source code must retain the above
+        * Redistributions of source codes must retain the above
           copyright notice, this list of conditions and the following
           disclaimer.
 
@@ -22625,7 +22625,7 @@ define('parse', ['./esprimaAdapter', 'lang'], function (esprima, lang) {
      * The config, name and deps args are not normalized.
      * @param {Object} fnExpScope an object whose keys are all function
      * expression identifiers that should be in scope. Useful for UMD wrapper
-     * detection to avoid parsing more into the wrapped UMD code.
+     * detection to avoid parsing more into the wrapped UMD codes.
      *
      * @returns {String} a JS source string with the valid require/define call.
      * Otherwise null.
@@ -24244,7 +24244,7 @@ function (lang,   logger,   envOptimize,        file,           parse,
  * This file patches require.js to communicate with the build system.
  */
 
-//Using sloppy since this uses eval for some code like plugins,
+//Using sloppy since this uses eval for some codes like plugins,
 //which may not be strict mode compliant. So if use strict is used
 //below they will have strict rules applied and may cause an error.
 /*jslint sloppy: true, nomen: true, plusplus: true, regexp: true */
@@ -24478,7 +24478,7 @@ define('requirePatch', [ 'env!env/file', 'pragma', 'parse', 'lang', 'logger', 'c
 
                                 //If it defines require, mark it so it can be hoisted.
                                 //Done here and in the else below, before the
-                                //else block removes code from the contents.
+                                //else block removes codes from the contents.
                                 //Related to #263
                                 if (!layer.existingRequireUrl && require._cachedDefinesRequireUrls[url]) {
                                     layer.existingRequireUrl = url;
@@ -26256,7 +26256,7 @@ define('build', function (require) {
         if (config.dir) {
             // Make sure the output dir is not set to a parent of the
             // source dir or the same dir, as it will result in source
-            // code deletion.
+            // codes deletion.
             if (!config.allowSourceOverwrites && (config.dir === config.baseUrl ||
                 config.dir === config.appDir ||
                 (config.baseUrl && build.makeRelativeFilePath(config.dir,
@@ -26265,9 +26265,9 @@ define('build', function (require) {
                     build.makeRelativeFilePath(config.dir, config.appDir).indexOf('..') !== 0))) {
                 throw new Error('"dir" is set to a parent or same directory as' +
                                 ' "appDir" or "baseUrl". This can result in' +
-                                ' the deletion of source code. Stopping. If' +
+                                ' the deletion of source codes. Stopping. If' +
                                 ' you want to allow possible overwriting of' +
-                                ' source code, set "allowSourceOverwrites"' +
+                                ' source codes, set "allowSourceOverwrites"' +
                                 ' to true in the build config, but do so at' +
                                 ' your own risk. In that case, you may want' +
                                 ' to also set "keepBuildDir" to true.');
