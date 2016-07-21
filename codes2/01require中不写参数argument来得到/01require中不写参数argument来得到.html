@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01require中不写参数argument来得到</title>
+    <script src="../../deps/require.js"></script>
+    <script>
+        require(["moduleReturnObject", "moduleReturnNull"], function () {
+            console.log("下面列出arguments的各个参数：")
+            if (arguments) {
+                console.log(arguments);
+                console.log("下面打印出arguments数组的各个参数");
+                for (var i = 0; i < arguments.length; i++) {
+                    console.log(arguments[i]);
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+<pre>
+require中虽然有参数列表
+但是，对应的函数中没有参数
+是否可以通过arguments参数来获得各个对象？
+</pre>
+</body>
+</html>
+<!--
+arguments在function中是永远可以使用的！
+-->
