@@ -1,0 +1,17 @@
+data-main的作用是提供了一个入口函数
+和直接在
+<script src="require.js"></script>
+之后添加
+<script src="main.js"></script>
+有什么不同？
+
+我跟踪了一下
+使用data-main的方式加载
+反而会导致main.js是整个页面中，最后一个加载的js文件
+
+
+我想：
+RequireJS这样规定，仅仅是一个规定
+让人们知道，这个页面中无数的js文件
+只有这个才是入口，要不然，用户怎么能知道：哪个js文件是requirejs的入口呢？
+

@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <title>03data-main</title>
     <style>
-        #mydiv{
-            width:200px;
-            height:200px;
-            border:1px solid green;
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
         }
     </style>
     <script src="../../deps/require.js" data-main="main.js"></script>
+    <script src="test1.js"></script>
+    <script src="test2.js"></script>
+    <script src="test3.js"></script>
 </head>
 <body>
 <div id="mydiv"></div>
 </body>
 </html>
+<!--
+问：data-main指向的js是异步加载的？
+答：是的，是异步加载！
+上述testX.js文件都在main.js前加载
+应该没有规定，只有这个页面的所有文件都加载完了，才会加载main.js吧？
+
+-->
