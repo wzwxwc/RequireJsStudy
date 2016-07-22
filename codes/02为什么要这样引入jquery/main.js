@@ -9,6 +9,6 @@ require.config({
 });
 
 require(['jquery'], function (zcjQuery) {
-    zcjQuery("#zcDiv").css('background-color', 'yellow');
+    zcjQuery("#zcDiv").css('background-color', 'green');
     console.log('data-main指向的js文件被执行！')
 });
