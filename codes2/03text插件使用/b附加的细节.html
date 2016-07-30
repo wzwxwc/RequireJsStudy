@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>附加的细节</title>
+    <script>
+        var str = '<!DOCTYPE html><html lang="en"><head>    <style>        #gis_template div {            width: 200px;            border: 2px solid green;        }    </style></head><body><div id="gis_template">    <div>        123    </div>    <div>        qwe    </div>    <div>        asd    </div>    <div>        zxc    </div></div></body></html>';
+
+        var divTest = null;
+        window.onload = function () {
+            divTest = document.getElementById("test");
+            //虽然上面的str包含很多东西，但是，head、body等标签没有进来！
+            //但是，我感觉虽然没有进来，那也是非常棒的做法！
+            divTest.innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+<div id="test"></div>
+</body>
+</html>
