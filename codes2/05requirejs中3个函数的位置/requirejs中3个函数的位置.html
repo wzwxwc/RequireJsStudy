@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05requirejs中3个函数的位置</title>
+    <script src="../../deps/require.js"></script>
+    <script>
+        require(["ThreePosition"], function (ThreePosition) {
+            var test = new ThreePosition("这是构造参数");
+            test.f3();
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
