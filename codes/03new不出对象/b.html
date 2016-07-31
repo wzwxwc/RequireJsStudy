@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../deps/require.js"></script>
+    <script>
+        require(["NoFun"], function (noFun) {
+            //我想看看NoFun中是否可以返回一个对象？
+            //回答：确实是一个对象
+            console.log(noFun);
+
+            //是否可以支持new的方式？
+            //回答：不可以
+            //下述语句会报错
+            //Uncaught TypeError: noFun is not a constructor
+            var noFunObject = new noFun();
+            console.log(noFunObject);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
