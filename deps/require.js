@@ -1,6 +1,6 @@
 /** vim: et:ts=4:sw=4:sts=4
- * @license RequireJS 2.2.0 Copyright jQuery Foundation and other contributors.
- * Released under MIT license, http://github.com/requirejs/requirejs/LICENSE
+ * @license RequireJS 2.3.2 Copyright jQuery Foundation and other contributors.
+ * Released under MIT license, https://github.com/requirejs/requirejs/blob/master/LICENSE
  */
 //Not using strict: uneven strict support in browsers, #392, and causes
 //problems with requirejs.exec()/transpiler plugins that may not be strict.
@@ -8,11 +8,11 @@
 /*global window, navigator, document, importScripts, setTimeout, opera */
 
 var requirejs, require, define;
-(function (global) {
+(function (global, setTimeout) {
     var req, s, head, baseElement, dataMain, src,
         interactiveScript, currentlyAddingScript, mainScript, subPath,
-        version = '2.2.0',
-        commentRegExp = /(\/\*([\s\S]*?)\*\/|([^:]|^)\/\/(.*)$)/mg,
+        version = '2.3.2',
+        commentRegExp = /\/\*[\s\S]*?\*\/|([^:"'=]|^)\/\/.*$/mg,
         cjsRequireRegExp = /[^.]\s*require\s*\(\s*["']([^'"\s]+)["']\s*\)/g,
         jsSuffixRegExp = /\.js$/,
         currDirRegExp = /^\.\//,
@@ -36,7 +36,7 @@ var requirejs, require, define;
         useInteractive = false;
 
     //Could match something like ')//comment', do not lose the prefix to comment.
-    function commentReplace(match, multi, multiText, singlePrefix) {
+    function commentReplace(match, singlePrefix) {
         return singlePrefix || '';
     }
 
@@ -213,7 +213,7 @@ var requirejs, require, define;
             },
             registry = {},
             //registry of just enabled modules, to speed
-            //cycle breaking codes when lots of modules
+            //cycle breaking code when lots of modules
             //are registered, but not activated.
             enabledRegistry = {},
             undefEvents = {},
@@ -1029,7 +1029,7 @@ var requirejs, require, define;
                         onError(err);
                     });
 
-                    //Allow plugins to load other codes without having to know the
+                    //Allow plugins to load other code without having to know the
                     //context or how to 'complete' the load.
                     load.fromText = bind(this, function (text, textAlt) {
                         /*jslint evil: true */
@@ -1546,7 +1546,7 @@ var requirejs, require, define;
              * Called to enable a module if it is still in the registry
              * awaiting enablement. A second arg, parent, the parent module,
              * is passed in for context, when this method is overridden by
-             * the optimizer. Not shown here to keep codes compact.
+             * the optimizer. Not shown here to keep code compact.
              */
             enable: function (depMap) {
                 var mod = getOwn(registry, depMap.id);
@@ -1910,11 +1910,11 @@ var requirejs, require, define;
                     //Check if node.attachEvent is artificially added by custom script or
                     //natively supported by browser
                     //read https://github.com/requirejs/requirejs/issues/187
-                    //if we can NOT find [native codes] then it must NOT natively supported.
+                    //if we can NOT find [native code] then it must NOT natively supported.
                     //in IE8, node.attachEvent does not have toString()
-                    //Note the test for "[native codes" with no closing brace, see:
+                    //Note the test for "[native code" with no closing brace, see:
                     //https://github.com/requirejs/requirejs/issues/273
-                    !(node.attachEvent.toString && node.attachEvent.toString().indexOf('[native codes') < 0) &&
+                    !(node.attachEvent.toString && node.attachEvent.toString().indexOf('[native code') < 0) &&
                     !isOpera) {
                 //Probably IE. IE (at least 6-8) do not fire
                 //script onload right after executing the script, so
@@ -2139,4 +2139,4 @@ var requirejs, require, define;
 
     //Set up with config info.
     req(cfg);
-}(this));
+}(this, (typeof setTimeout === 'undefined' ? undefined : setTimeout)));
