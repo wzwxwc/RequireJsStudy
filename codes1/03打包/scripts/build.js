@@ -1,7 +1,10 @@
 /**
  * Created by zcRescuer on 2017/5/9.
  */
-require.config({
+
+({
+    baseUrl: ".",
+    name: "main",
     paths: {
         oneName: "./one",
         twoName: "./two",
@@ -9,11 +12,8 @@ require.config({
     },
     shim: {
         oneName: {
-            deps: ['css!../styles/a.css']
+            deps: ['css!./styles/a.css']
         }
-    }
-});
-
-require(["oneName", "twoName", "threeName"], function (one, two, three) {
-    alert(one + two + three)
-});
+    },
+    out: "main-build.js"
+})
