@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>04require写在代码里</title>
-    <script src="../../deps/require.js" data-main="./module/test.js"></script>
+    <script src="../../deps/require.js"></script>
+    <script src="module/test.js"></script>
 </head>
 <body>
-<h1>事实证明，模块内部使用require是行不通的！</h1>
+<h4>事实证明，require模块内部使用require()是行不通的！</h4>
+<h4>错误信息：</h4>
+<h4>Uncaught Error: Module name "aa" has not been loaded yet for context: _. Use require([])</h4>
 </body>
 </html>
