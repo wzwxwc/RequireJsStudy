@@ -3,9 +3,9 @@
  */
 require.config({
     paths: {
-        type1: "./js/type1",
-        type2: "./js/type2",
-        type3: "./js/type3"
+        type1: "./wrokTypes/type1",
+        type2: "./wrokTypes/type2",
+        type3: "./wrokTypes/type3"
     },
     waitSeconds: 4
 });
