@@ -10,6 +10,22 @@ define([], function () {
     var dd = function () {
         console.log("define内部——内部函数——非返回")
     }
+    var test = function () {
+        console.log("我就想看看在module内部的自执行函数中的this");
+        console.log(this);
+    };
+    test();
+
+    //立即执行函数1————ok
+    (function () {
+        console.log("我就想看看在module内部的自执行函数中的this");
+        console.log(this);
+    }());
+    //立即执行函数2————ok
+    (function () {
+        console.log("我就想看看在module内部的自执行函数中的this");
+        console.log(this);
+    })();
     return cc;
 });
 console.log("define外面——define后");
