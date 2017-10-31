@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07相对路径</title>
+    <script src="../../deps/require.js"></script>
+    <script>
+        require.config({
+            paths: {
+                common: "./common2"
+            }
+        });
+        //        require(["common/module1"],function () {
+        //
+        //        })
+
+        require(["./common/common/module1"], function () {
+            console.log("这个竟然也显示为common2！也就是说deps中的第一个地址，会被paths中定义的给覆盖掉");
+            console.log("只会覆盖第一个");
+            console.log("即使deps中的路径以./开头，也是会被pths中的覆盖");
+            console.log("但是deps中的路径以../开头，则是相对路径");
+        })
+    </script>
+</head>
+<body>
+<a href="http://blog.csdn.net/zhujun_xiaoxin/article/details/54691705">requirejs的相对路径</a>
+</body>
+</html>

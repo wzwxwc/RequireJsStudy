@@ -1,4 +1,4 @@
-define(["/modulefolder/module1"], function () {
+define(["./module1"], function () {
     var temp = function () {
 
     };
