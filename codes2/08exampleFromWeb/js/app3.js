@@ -1,10 +1,10 @@
 requirejs.config ({
     baseUrl: 'js',
     paths: {
-        "hello": "lib/hello"
+        "lib1": "lib"
     }
 });
 
-require(['hello'], function(hello) {
+require(['lib1/hello'], function(hello) {
     hello.hello("RquireJS");
 });
