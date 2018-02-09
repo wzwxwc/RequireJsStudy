@@ -12,3 +12,7 @@ A：证明了require函数是异步函数
 
 3、如果define或require里的deps不写或为空，是否还是异步执行
 A：还是异步执行！
+
+4、define中嵌套require是可行的
+但是，define所对应的这个模块，被人使用后，无法确保里面的
+require的模块已经被加载，而且一般经常不被加载！

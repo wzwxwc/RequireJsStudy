@@ -8,6 +8,10 @@ require.config({
 });
 console.log("require之前");
 require(["a"], function (instanceA) {
+    setTimeout(function () {
+        g2.b.say();
+    }, 1000);
+    g2.b.say();
     console.log("require内部");
     instanceA.say();
 

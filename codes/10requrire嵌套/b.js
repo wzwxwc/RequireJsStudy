@@ -11,5 +11,8 @@ define([], function () {
             instanceC.say();
         })
     };
+    var g2 = window.g2 || {};
+    g2.b = temp;
+    window.g2 = g2;
     return temp;
 });

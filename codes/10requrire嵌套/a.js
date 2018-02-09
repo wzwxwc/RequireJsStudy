@@ -12,7 +12,12 @@ define([], function () {
     };
     require(["b"], function (instanceB) {
         instanceB.say();
-    })
+    });
+    // var g2 = g2 || {};
+    //上述因为var声明，变量提升的原因，此时等号右边的g2为undefined
+    var g2 = window.g2 || {};
+    g2.a = temp;
+    window.g2 = g2;
     return temp;
 });
 console.log("define之后");
