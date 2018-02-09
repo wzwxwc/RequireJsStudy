@@ -3,9 +3,9 @@
  * 作者：张超
  * 功能：
  */
-console.log("define之前");
+console.log("a.js的define之前");
 define([], function () {
-    console.log("deine内部");
+    console.log("a.js的deine内部");
     var temp = {};
     temp.say = function () {
         console.log("a模块的say方法被执行");
@@ -20,4 +20,4 @@ define([], function () {
     window.g2 = g2;
     return temp;
 });
-console.log("define之后");
+console.log("a.js的define之后");

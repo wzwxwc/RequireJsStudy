@@ -6,14 +6,17 @@
 require.config({
     baseUrl: "./"
 });
-console.log("require之前");
-require(["a"], function (instanceA) {
-    setTimeout(function () {
-        g2.b.say();
-    }, 1000);
-    g2.b.say();
-    console.log("require内部");
-    instanceA.say();
+console.log("main.js的require之前");
+require(["a1"], function (instanceA) {
+    //下述say方法执行ok
+    // setTimeout(function () {
+    //     g2.b.say();
+    // }, 1000);
+
+    //下述say方法执行报错
+    // g2.b.say();
+    console.log("main.js的require内部");
+    // instanceA.say();
 
 });
-console.log("require之后");
+console.log("main.js的require之后");
